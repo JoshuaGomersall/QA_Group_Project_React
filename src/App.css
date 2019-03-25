@@ -89,8 +89,7 @@ font-family: Adventure;
 width: 25vh;
 }
 
-.item3 { grid-area: main;}
-.item5 { grid-area: footer;}
+.main { grid-area: main;}
 .profile { grid-area: logout;}
 
 .grid-container {
@@ -98,7 +97,7 @@ width: 25vh;
   grid-template-areas:
     'header header header header header logout logout'
     'menu main main main main main main'
-    'menu footer footer footer footer footer footer ';
+    'menu main main main main main main ';
 	
   grid-gap: 5px;
   background-color: #282c34;
