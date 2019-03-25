@@ -3,27 +3,26 @@ import logo from './logo.svg';
 import logo_qa from './logo_qa.png';
 import profileimage from './profileimage.jpg';
 import './App.css';
-import { BrowserRouter as Router, Route, NavLink ,Link} from "react-router-dom";
+import { BrowserRouter as Router, Route, NavLink, Link } from "react-router-dom";
 
 class App extends Component {
-  
+
   constructor(props) {
     super(props);
     this.state = {
-      username : 'John',
+      username: 'TestName',
     }
   }
-  
+
   render() {
     return (
       <Router>
         <div className="App">
           <header className="App-header">
-
-
             <div className="grid-container">
-              <div className="item1">
+              <div className="header">
                 <div>
+                  <br/>
                   <img style={{ width: '80px', height: '80px' }} src={logo_qa} alt="Logo" />
                   <div className='titlebutton'>
                     <h1> Room Booking System </h1>
@@ -31,24 +30,27 @@ class App extends Component {
                 </div>
               </div>
 
-              <div className="item6">
-                <Link to={ '' + this.state.username + '_account_settings'}>{this.state.username}
+              <div className="profile">
+                <h3>
+                  <Link to={'' + this.state.username + '_account_settings'}>{this.state.username}
                   </Link>
-                <br />
-                <br />
-                <img style={{ width: '100px', height: '100px' }} src={profileimage} alt="Logo" />
+                </h3>
+                <img style={{ width: '7vh', height: '7vh' }} src={profileimage} alt="Logo" />
                 <br />
                 <button>
-                  Logout
-                  </button>
+                <NavLink to="/">Logout</NavLink>
+                </button>
+                <br />
+                <br />
               </div>
 
-              <div className="item2">
+              <div className="menu">
                 <div className="topnav">
                   <NavLink to="/Home">Home</NavLink>
                   <NavLink to="/CheckRooms">Check Rooms</NavLink>
                   <NavLink to="/Floor4">Floor 4</NavLink>
                   <NavLink to="/Floor5">Floor 5</NavLink>
+                  <NavLink to="/GroupBooking">Group Booking</NavLink>
                 </div>
               </div>
 
@@ -60,17 +62,7 @@ class App extends Component {
 
               <div className="item5">
                 <p>
-                  Bottomwdadawd
-                  aw
-                  daw
-                  dawdaw
-                  dawdaw
-                  d
-                  awd
-                  d
-                  awdawd
-                  awdawdawd
-                  awd
+                  Bottom
                     </p>
               </div>
 
