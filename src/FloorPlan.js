@@ -10,7 +10,6 @@ class App extends Component {
     super(props);
     this.state = {
       floornumber: ' 4',
-      name:"my-map",
     };
   }
 
@@ -25,21 +24,7 @@ class App extends Component {
           </h3>
 
 <div className="image">
-    <ImageMapper src={logo_qa} width={150} imgWidth={150}
-    	onClick={area => this.clicked(area)}
-    	onMouseEnter={area => this.enterArea(area)}
-    	onMouseLeave={area => this.leaveArea(area)}
-    	onMouseMove={(area, _, evt) => this.moveOnArea(area, evt)}
-    	onImageClick={evt => this.clickedOutside(evt)}
-    	onImageMouseMove={evt => this.moveOnImage(evt)}
-    />
-    {
-    	this.state.hoveredArea &&
-    	<span className="tooltip"
-    	    style={{ ...this.getTipPosition(this.state.hoveredArea)}}>
-    		{ this.state.hoveredArea && this.state.hoveredArea.name}
-    	</span>
-    }
+    <ImageMapper src={logo_qa} width={150} imgWidth={150}/>
 </div>
 
         <br /><br />

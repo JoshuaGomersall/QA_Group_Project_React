@@ -7,6 +7,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import setMinutes from "date-fns/setMinutes";
 import setHours from "date-fns/setHours";
+import addMonths from "date-fns/setHours";
 
 
 class App extends Component {
@@ -22,6 +23,7 @@ class App extends Component {
   }
 
   handleChange1(date) {
+    console.log(date);
     let newDate = new Date();
     this.setState({
       startDate: date
@@ -44,8 +46,9 @@ class App extends Component {
           onChange={this.handleChange1}
           showTimeSelect
           timeIntervals={15}
-          minTime={setHours(setMinutes(new Date(), 0), 9)}
-          maxTime={setHours(setMinutes(new Date(), 30), 17)}
+          minDate={new Date()}
+          minTime={new Date()}
+          maxTime={setHours(setMinutes(new Date(), 45), 18)}
           dateFormat="MMMM d, yyyy h:mm aa"
         />
 
@@ -55,9 +58,13 @@ class App extends Component {
           onChange={this.handleChange2}
           showTimeSelect
           timeIntervals={15}
-          minTime={setHours(setMinutes(new Date(), 0), 9)}
-          maxTime={setHours(setMinutes(new Date(), 30), 17)}
+          minDate={new Date()}
+          minDate={this.state.startDate}
+          maxDate={addMonths(this.state.startDate, 300)}
+          minTime={this.state.startDate}
+          maxTime={setHours(setMinutes(new Date(), 0), 19)}
           dateFormat="MMMM d, yyyy h:mm aa"
+          showDisabledMonthNavigation
         />
         <br /><br />
       </div>

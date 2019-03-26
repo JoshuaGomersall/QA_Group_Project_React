@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@mobiscroll/react": "https://npm.mobiscroll.com/@mobiscroll/react-trial/-/react-trial-4.6.1.tgz",
     "react": "^16.8.5",
     "react-calendar": "^2.18.1",
     "react-datepicker": "^2.3.0",

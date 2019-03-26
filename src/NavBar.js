@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Route, NavLink, Link } from "react-router-dom"
 import "react-datepicker/dist/react-datepicker.css";
 import RoomBooking from "./RoomBooking";
 import Home from "./Home";
+import AccountSettings from "./AccountSettings";
 import FloorPlan from "./FloorPlan";
 
 
@@ -14,8 +15,9 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: 'TestName',
-      floornumber: ' 5',
+      forename: 'John',
+      surname: 'Richards',
+      email: 'JohnRichards@qa.com',
     };
   }
 
@@ -25,47 +27,52 @@ class App extends Component {
         <div className="App">
           <header className="App-header">
             <div className="grid-container">
+
+              <div className="padding">
+              </div>
+
+              <div className="logo">
+                <img style={{ width: '50px', height: '50px' }} src={logo_qa} alt="Logo" />
+              </div>
+
               <div className="header">
-                <div>
-                  <br />
-                  <img style={{ width: '80px', height: '80px' }} src={logo_qa} alt="Logo" />
-                  <div className='titlebutton'>
-                    <h1> Room Booking System </h1>
+                <div >
+                  Room Booking System
                   </div>
-                </div>
               </div>
 
               <div className="profile">
-                <h3>
-                  <Link to={'' + this.state.username + '_account_settings'}>{this.state.username}
+
+                <button>
+                  <Link to={this.state.forename + this.state.surname + '_account_settings'}>{this.state.forename} {this.state.surname}
                   </Link>
-                </h3>
-                <img style={{ width: '7vh', height: '7vh' }} src={profileimage} alt="Logo" />
-                <br />
+                </button>
                 <button>
                   <NavLink to="/">Logout</NavLink>
                 </button>
-                <br />
-                <br />
               </div>
 
               <div className="main">
                 <Route exact path="/Home" component={Home} />
                 <Route exact path="/CheckRooms" />
-                <Route exact path="/Floor4" component={FloorPlan} floornumber={this.state.floornumber} />
+                <Route exact path="/Floor4" component={FloorPlan} floornumber='4' />
                 <Route exact path="/Floor5" />
                 <Route exact path="/RoomBooking" component={RoomBooking} />
+                <Route exact path={"/" + this.state.forename + this.state.surname + '_account_settings'} forename={this.state.forename} surname={this.state.surname} email={this.state.email} component={AccountSettings} />
               </div>
-
 
               <div className="menu">
                 <div className="topnav">
                   <NavLink to="/Home">Home</NavLink>
+                  <br /><br />
                   <NavLink to="/CheckRooms">Check Rooms</NavLink>
+                  <br /><br />
                   <NavLink to="/Floor4">Floor 4</NavLink>
+                  <br /><br />
                   <NavLink to="/Floor5">Floor 5</NavLink>
+                  <br /><br />
                   <NavLink to="/RoomBooking">Room Booking</NavLink>
-
+                  <br /><br />
 
                 </div>
               </div>

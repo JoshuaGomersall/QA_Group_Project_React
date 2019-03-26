@@ -1,3 +1,5 @@
+
+
 .App {
   text-align: center;
 }
@@ -8,15 +10,71 @@
   pointer-events: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.loginButton0
+{
+  background-color: teal;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2.7vmin);
+  max-width: 30vh;
+  color: navy;
+}
+
+.loginButton1
+{
+  background-color: #d86106;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2.7vmin);
+  color: navy;
+  max-width: 30vh;
+}
+
+.login0
+{
+  display: none;
+}
+
+.login1
+{
+  background-color: teal;
+  min-height: 30vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(10px + 4vmin);
+  color: navy;
+  width: 25vh;
+}
+
+.signup0
+{
+  display: none;
+}
+.signup1
+{
+  background-color: teal;
+  min-height: 30vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 4vmin);
   color: white;
+  width: 25vh;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: navy;
 }
 
 .App-link {
@@ -34,27 +92,29 @@ font-family: Adventure;
   overflow: hidden;
   margin: 0px;
   padding: 0px;
-  background-color: grey;
+  background-color: #324eb5;
 }
 
 .topnav a 
 {
   float: left;
   color: #f2f2f2;
+  background-color: #324eb5;
   text-align: center;
   padding: 0px 0px;
   font-size: 30px;
   min-width: 100px;
-  width: 200px;
+  width: 220px;
   margin-top: 10px;
   margin-bottom: 10px;
 }
 .topnav a:hover 
 {
-  background-color: #ddd;
-  color: grey;
+  background-color: #1c73ff;
+  color: white;
   min-width: 100px;
-  width: 200px;
+  width: 220px;
+  font-size: 30px;
   text-align: center;
   margin-top: 10px;
   margin-bottom: 10px;
@@ -62,49 +122,63 @@ font-family: Adventure;
 .topnav a.active 
 {
   float: left;
-  color: #f2f2f2;
   text-align: left;
   font-size: 30px;
   margin-top: 10px;
   margin-bottom: 10px;
-  background-color: #2196F3;
-  padding-right: 100px;
+  background-color: #d86106;
   color: black;
   text-align: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+input{
+  text-align: center;
 }
 
-.header { grid-area: header;}
+.logo { grid-area: logo;
+     background-color:#324eb5;
+}
+
+.header { grid-area: header;
+     background-color:#324eb5;
+}
 
 .menu { grid-area: menu;
-width: 25vh;
+  background-color: #324eb5; 
+  height: 90vh;
 }
 
-.main { grid-area: main;}
-.profile { grid-area: logout;}
+.main { grid-area: main;
+  background-color: white;
+  padding: 0px;
+  left: -20px;
+}
+
+.profile { grid-area: logout;
+     background-color:#324eb5;
+}
+
+.padding { grid-area: padding;
+     background-color:#324eb5;
+     padding-top: 100px;
+}
 
 .grid-container {
   display: grid;
   grid-template-areas:
-    'header header header header header logout logout'
-    'menu main main main main main main'
-    'menu main main main main main main ';
+    'padding padding padding padding padding padding padding padding'
+    'logo header header header header logout logout logout'
+    'menu main main main main main main main'
+    'menu main main main main main main main'
+    'menu main main main main main main main'
+    'menu main main main main main main main';
 	
-  grid-gap: 5px;
+  grid-gap: 0px;
   background-color: #282c34;
-  padding: 5px;
+  padding: 0px;
 }
 
 .grid-container > div {
-  background-color:teal;
   text-align: center;
   padding: 0px 0px;
   font-size: 30px;
