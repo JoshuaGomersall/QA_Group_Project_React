@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './App.css';
-import logo_qa from "./logo_qa.png";
 import ImageMapper from 'react-image-mapper';
 
 
@@ -11,9 +10,22 @@ class App extends Component {
     this.state = {
       floornumber: ' 4',
     };
+
+  this.clicked = (e) =>
+  {
+    console.log(e.name)
   }
+}
 
   render() {
+    let URL = "https://i.pinimg.com/originals/69/87/bc/6987bcc2297415a9b10c483c701842b6.jpg"
+    let MAP = {
+      name: "my-map",
+      areas: [
+        { name: "Main", shape: "poly", coords: [220,80,220,140,280,140,280,80], preFillColor: "blue" , fillColor: "lightblue"  },
+        { name: "Side", shape: "poly", coords: [110,80,110,140,200,140,200,80], preFillColor: "red" , fillColor: "lightblue"  },
+      ]
+    }
     return (
       <div className="App">
         <br/><br/>
@@ -23,8 +35,17 @@ class App extends Component {
           {this.state.floornumber}
           </h3>
 
-<div className="image">
-    <ImageMapper src={logo_qa} width={150} imgWidth={150}/>
+          <div className="container">
+    <ImageMapper src={URL} map={MAP} width={500}
+    	onClick={area => this.clicked(area)}
+    />
+    {
+    	this.state.hoveredArea &&
+    	<span className="tooltip"
+    	    style={{ ...this.getTipPosition(this.state.hoveredArea)}}>
+    		{ this.state.hoveredArea && this.state.hoveredArea.name}
+    	</span>
+    }
 </div>
 
         <br /><br />

@@ -14,8 +14,8 @@ class App extends Component {
       password: '',
       confimPassword: '',
 
-      loginState: '1',
-      signupState: '0',
+      loginState: 0,
+      signupState: 1,
 
       errorMessage: '',
     }
@@ -147,14 +147,12 @@ class App extends Component {
             <div className="invalid">
               {this.state.errormessage}
             </div>
-            <br />
+            <br/>
             <button onClick={this.signupvalidate}>
               SignUp
             </button>
-            <br />
-
+            <br/>
           </div>
-
 
         </header>
       </div>

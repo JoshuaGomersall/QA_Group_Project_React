@@ -47,9 +47,10 @@
 {
   display: none;
 }
+
 .signup1
 {
-  background-color:rgb(91, 155, 213);
+  background-color: rgb(91, 155, 213);
   min-height: 30vh;
   display: flex;
   flex-direction: column;
