@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
-import logo_qa from './logo_qa.png';
-import profileimage from './profileimage.jpg';
 import './App.css';
-import { BrowserRouter as Router, Route, NavLink, Link } from "react-router-dom";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import setMinutes from "date-fns/setMinutes";
@@ -40,6 +37,12 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+
+        <input placeholder="Email" />
+        <br />
+        <input placeholder="Activity Name" />
+
+
         <p>Start Of Booking</p>
         <DatePicker
           selected={this.state.startDate}
@@ -67,6 +70,10 @@ class App extends Component {
           showDisabledMonthNavigation
         />
         <br /><br />
+
+        <input type={Text} placeholder="Activity Name" />
+
+
       </div>
     );
   }

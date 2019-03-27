@@ -1,7 +1,6 @@
-
-
 .App {
   text-align: center;
+  align-items: center;
 }
 
 .App-logo {
@@ -12,13 +11,13 @@
 
 .loginButton0
 {
-  background-color: teal;
+  background-color:  rgb(91, 155, 213);
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2.7vmin);
   max-width: 30vh;
-  color: navy;
+  color: white;
 }
 
 .loginButton1
@@ -39,24 +38,25 @@
 
 .login1
 {
-  background-color: teal;
+  background-color: rgb(91, 155, 213);
   min-height: 30vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 4vmin);
-  color: navy;
+  color: white;
   width: 25vh;
 }
 
 .signup0
 {
   display: none;
+  align-items: center;
 }
 .signup1
 {
-  background-color: teal;
+  background-color:rgb(91, 155, 213);
   min-height: 30vh;
   display: flex;
   flex-direction: column;
@@ -70,6 +70,7 @@
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -83,7 +84,7 @@
 
 h3{
   text-align: center;
-  padding: 10px;
+  padding: 5px;
   color: black;
 }
 
@@ -92,14 +93,14 @@ font-family: Adventure;
   overflow: hidden;
   margin: 0px;
   padding: 0px;
-  background-color: #324eb5;
+  background-color: rgb(61, 111, 201);
 }
 
 .topnav a 
 {
   float: left;
   color: #f2f2f2;
-  background-color: #324eb5;
+  background-color: rgb(61, 111, 201);
   text-align: center;
   padding: 0px 0px;
   font-size: 30px;
@@ -110,7 +111,7 @@ font-family: Adventure;
 }
 .topnav a:hover 
 {
-  background-color: #1c73ff;
+  background-color: rgb(61, 80, 201);
   color: white;
   min-width: 100px;
   width: 220px;
@@ -136,15 +137,15 @@ input{
 }
 
 .logo { grid-area: logo;
-     background-color:#324eb5;
+     background-color:rgb(61, 111, 201);
 }
 
 .header { grid-area: header;
-     background-color:#324eb5;
+     background-color:rgb(61, 111, 201);
 }
 
 .menu { grid-area: menu;
-  background-color: #324eb5; 
+  background-color: rgb(61, 111, 201);
   height: 90vh;
 }
 
@@ -155,12 +156,13 @@ input{
 }
 
 .profile { grid-area: logout;
-     background-color:#324eb5;
+     background-color:rgb(61, 111, 201);
 }
 
 .padding { grid-area: padding;
-     background-color:#324eb5;
-     padding-top: 100px;
+     background-color:rgb(61, 111, 201);
+     height: 4vh;
+     color: rgb(61, 111, 201);
 }
 
 .grid-container {

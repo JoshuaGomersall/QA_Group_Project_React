@@ -15,7 +15,7 @@ class App extends Component {
   }
 
   loggedincheck = () => {
-if (this.state.loggedin='0')
+if (this.state.loggedin=='0')
         {
           return <Login />
         }

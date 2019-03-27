@@ -25,60 +25,57 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-          <header className="App-header">
-            <div className="grid-container">
+          <div className="grid-container">
 
-              <div className="padding">
-              </div>
-
-              <div className="logo">
-                <img style={{ width: '50px', height: '50px' }} src={logo_qa} alt="Logo" />
-              </div>
-
-              <div className="header">
-                <div >
-                  Room Booking System
-                  </div>
-              </div>
-
-              <div className="profile">
-
-                <button>
-                  <Link to={this.state.forename + this.state.surname + '_account_settings'}>{this.state.forename} {this.state.surname}
-                  </Link>
-                </button>
-                <button>
-                  <NavLink to="/">Logout</NavLink>
-                </button>
-              </div>
-
-              <div className="main">
-                <Route exact path="/Home" component={Home} />
-                <Route exact path="/CheckRooms" />
-                <Route exact path="/Floor4" component={FloorPlan} floornumber='4' />
-                <Route exact path="/Floor5" />
-                <Route exact path="/RoomBooking" component={RoomBooking} />
-                <Route exact path={"/" + this.state.forename + this.state.surname + '_account_settings'} forename={this.state.forename} surname={this.state.surname} email={this.state.email} component={AccountSettings} />
-              </div>
-
-              <div className="menu">
-                <div className="topnav">
-                  <NavLink to="/Home">Home</NavLink>
-                  <br /><br />
-                  <NavLink to="/CheckRooms">Check Rooms</NavLink>
-                  <br /><br />
-                  <NavLink to="/Floor4">Floor 4</NavLink>
-                  <br /><br />
-                  <NavLink to="/Floor5">Floor 5</NavLink>
-                  <br /><br />
-                  <NavLink to="/RoomBooking">Room Booking</NavLink>
-                  <br /><br />
-
-                </div>
-              </div>
-
+            <div className="padding">
             </div>
-          </header>
+            <br />
+            <div className="logo">
+              <img style={{ width: '50px', height: '50px' }} src={logo_qa} alt="Logo" />
+            </div>
+
+            <div className="header">
+              <div >
+              <img style={{ width: '50px', height: '50px' }} src={logo_qa} alt="Logo" />
+                  </div>
+            </div>
+
+            <div className="profile">
+
+              <button>
+                <Link to={this.state.forename + this.state.surname + '_account_settings'}>{this.state.forename} {this.state.surname}
+                </Link>
+              </button>
+              <button>
+                <NavLink to="/">Logout</NavLink>
+              </button>
+            </div>
+
+            <div className="main">
+              <Route exact path="/Home" component={Home} />
+              <Route exact path="/CheckRooms" />
+              <Route exact path="/Floor4" component={FloorPlan} floornumber='4' />
+              <Route exact path="/Floor5" />
+              <Route exact path="/RoomBooking" component={RoomBooking} />
+              <Route exact path={"/" + this.state.forename + this.state.surname + '_account_settings'} forename={this.state.forename} surname={this.state.surname} email={this.state.email} component={AccountSettings} />
+            </div>
+
+            <div className="menu">
+              <div className="topnav">
+                <NavLink to="/Home">Home</NavLink>
+                <br /><br />
+                <NavLink to="/CheckRooms">Check Rooms</NavLink>
+                <br /><br />
+                <NavLink to="/Floor4">Floor 4</NavLink>
+                <br /><br />
+                <NavLink to="/Floor5">Floor 5</NavLink>
+                <br /><br />
+                <NavLink to="/RoomBooking">Room Booking</NavLink>
+                <br /><br />
+
+              </div>
+            </div>
+          </div>
         </div>
       </Router>
     );

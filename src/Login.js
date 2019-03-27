@@ -17,7 +17,7 @@ class App extends Component {
       this.setState({
         loginstate: 1,
         signupstate: 0,
-        });
+      });
     }
 
     this.signuppage = () => {
@@ -28,6 +28,9 @@ class App extends Component {
       });
     }
   }
+
+
+
 
   render() {
     return (
@@ -44,19 +47,41 @@ class App extends Component {
           </div>
 
           <div className={"login" + this.state.loginstate}>
-            Email :
+            Email
             <input />
             <br />
             Password
             <input />
             <br />
+            <button>
+            Login
+            </button>
+            <br/>
           </div>
 
           <div className={"signup" + this.state.signupstate}>
-            Forename :
-        <br />
-            Surname :
-        <br />
+            Email
+            <input />
+            <br />
+            Forename
+            <input />
+            <br />
+            Surname
+            <input />
+            <br />
+            Password
+            <input />
+
+            <br />
+            Confirm Password
+            <input />
+            <br />
+
+            <button>
+            SignUp
+            </button>
+            <br/>
+
           </div>
 
 
