@@ -15,19 +15,17 @@ class App extends Component {
   }
 
   loggedincheck = () => {
-if (this.state.loggedin=='0')
-        {
-          return <Login />
-        }
-        else
-        {
-          return <NavBar />
-        }
-}
+    if (this.state.loggedin == '0') {
+      return <Login />
+    }
+    else {
+      return <NavBar />
+    }
+  }
 
   render() {
     return (
-      <NavBar/>
+      <Login />
     );
   }
 }

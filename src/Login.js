@@ -10,6 +10,28 @@ class App extends Component {
     this.state = {
       loginstate: '1',
       signupstate: '0',
+      errormessage: '',
+    }
+
+    this.loginvalidate = () => {
+
+
+      {
+        this.setState({
+          errormessage: 'Invalid Email'
+        });
+      }
+      
+      {
+        this.setState({
+        errormessage: 'Invalid Password'
+        });
+      }
+      {
+        this.setState({
+          errormessage: ''
+        });
+      }
     }
 
     this.loginpage = () => {
@@ -29,15 +51,12 @@ class App extends Component {
     }
   }
 
-
-
-
   render() {
     return (
       <div className="App">
         <header className="App-header">
-
           <div>
+            <br />
             <button className={'loginButton' + this.state.loginstate} onClick={this.loginpage}>
               Login
           </button>
@@ -47,40 +66,38 @@ class App extends Component {
           </div>
 
           <div className={"login" + this.state.loginstate}>
+            <br />
             Email
             <input />
-            <br />
             Password
             <input />
             <br />
-            <button>
-            Login
+            <div className="invalid">
+              {this.state.errormessage}
+            </div>
+            <br />
+            <button onClick={this.loginvalidate}>
+              Login
             </button>
-            <br/>
+            <br />
           </div>
 
           <div className={"signup" + this.state.signupstate}>
             Email
-            <input />
-            <br />
+            <input placeholder="example@example.qa.com" />
             Forename
             <input />
-            <br />
             Surname
             <input />
-            <br />
             Password
             <input />
-
-            <br />
             Confirm Password
             <input />
             <br />
-
             <button>
-            SignUp
+              SignUp
             </button>
-            <br/>
+            <br />
 
           </div>
 

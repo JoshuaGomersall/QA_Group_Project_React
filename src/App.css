@@ -3,12 +3,6 @@
   align-items: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
 .loginButton0
 {
   background-color:  rgb(91, 155, 213);
@@ -44,7 +38,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 4vmin);
+  font-size: calc(10px + 3vmin);
   color: white;
   width: 25vh;
 }
@@ -62,30 +56,24 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 4vmin);
+  font-size: calc(10px + 1.5vmin);
   color: white;
   width: 25vh;
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: white;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: top;
   font-size: calc(10px + 2vmin);
   color: navy;
 }
 
 .App-link {
   color: #61dafb;
-}
-
-h3{
-  text-align: center;
-  padding: 5px;
-  color: black;
 }
 
 .topnav {
@@ -105,7 +93,6 @@ font-family: Adventure;
   padding: 0px 0px;
   font-size: 30px;
   min-width: 100px;
-  width: 220px;
   margin-top: 10px;
   margin-bottom: 10px;
 }
@@ -114,7 +101,6 @@ font-family: Adventure;
   background-color: rgb(61, 80, 201);
   color: white;
   min-width: 100px;
-  width: 220px;
   font-size: 30px;
   text-align: center;
   margin-top: 10px;
@@ -134,6 +120,18 @@ font-family: Adventure;
 
 input{
   text-align: center;
+  background-color :#d1d1d1ff;
+  color: black;
+  border-bottom-width: 5px;
+}
+
+.inputlarge{
+  text-align: center;
+  background-color :#d1d1d1ff;
+  color: black;
+  border-bottom-width: 5px;
+  width: 50vh;
+  height: 50vh;
 }
 
 .logo { grid-area: logo;
@@ -151,8 +149,6 @@ input{
 
 .main { grid-area: main;
   background-color: white;
-  padding: 0px;
-  left: -20px;
 }
 
 .profile { grid-area: logout;
@@ -162,7 +158,21 @@ input{
 .padding { grid-area: padding;
      background-color:rgb(61, 111, 201);
      height: 4vh;
-     color: rgb(61, 111, 201);
+}
+
+.paddingwhite {
+  background-color:white;
+  color: black;
+}
+
+.paddingtest {
+  background-color:rgb(61, 111, 201);
+  padding: 40px;
+}
+
+.footer { grid-area: footer;
+  background-color:rgb(61, 111, 201);
+  height: 4vh;
 }
 
 .grid-container {
@@ -170,7 +180,6 @@ input{
   grid-template-areas:
     'padding padding padding padding padding padding padding padding'
     'logo header header header header logout logout logout'
-    'menu main main main main main main main'
     'menu main main main main main main main'
     'menu main main main main main main main'
     'menu main main main main main main main';

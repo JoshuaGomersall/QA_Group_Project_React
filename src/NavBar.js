@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import logo_qa from './logo_qa.png';
-import profileimage from './profileimage.jpg';
+import qa from './qa.png';
 import './App.css';
 import { BrowserRouter as Router, Route, NavLink, Link } from "react-router-dom";
 import "react-datepicker/dist/react-datepicker.css";
@@ -25,18 +25,20 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
+        <div className="App-header">
           <div className="grid-container">
 
             <div className="padding">
             </div>
             <br />
             <div className="logo">
-              <img style={{ width: '50px', height: '50px' }} src={logo_qa} alt="Logo" />
+              <img style={{ width: '80px', height: '80px' }} src={logo_qa} alt="Logo" />
             </div>
 
             <div className="header">
               <div >
-              <img style={{ width: '50px', height: '50px' }} src={logo_qa} alt="Logo" />
+              <img style={{ width: '50px', height: '50px'}} src={qa} alt="Logo" />
+              Consulting Rooms
                   </div>
             </div>
 
@@ -71,10 +73,9 @@ class App extends Component {
                 <NavLink to="/Floor5">Floor 5</NavLink>
                 <br /><br />
                 <NavLink to="/RoomBooking">Room Booking</NavLink>
-                <br /><br />
-
               </div>
             </div>
+          </div>
           </div>
         </div>
       </Router>
