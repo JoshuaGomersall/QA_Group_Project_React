@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-
+import validator from 'validator';
 
 
 class App extends Component {
@@ -8,45 +8,99 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      loginstate: '1',
-      signupstate: '0',
-      errormessage: '',
+      email: '',
+      forname: '',
+      surname: '',
+      password: '',
+      confimPassword: '',
+
+      loginState: '1',
+      signupState: '0',
+
+      errorMessage: '',
     }
 
-    this.loginvalidate = () => {
-
-
-      {
+    this.signupvalidate = () => {
+      console.log(this.state.email);
+      if (this.state.email == ''){
         this.setState({
-          errormessage: 'Invalid Email'
+          errormessage: 'Missing Email',
         });
       }
-      
-      {
+      else if ((this.state.email).endsWith('@qa.com') == false ){
         this.setState({
-        errormessage: 'Invalid Password'
+          errormessage: 'Invalid Email',
         });
       }
-      {
+      else if (validator.isAlpha(this.state.forname) == false){
         this.setState({
-          errormessage: ''
+          errormessage: 'Invalid Forname',
+        });
+      }
+      else if (validator.isAlpha(this.state.surname) == false){
+        this.setState({
+          errormessage: 'Invalid Surname',
+        });
+      }
+      else if (this.state.password == ''){
+        this.setState({
+          errormessage: 'Password Missing',
+        });
+      }
+      else if (this.state.password !== this.state.confimPassword){
+        this.setState({
+          errormessage: 'Both Passwords Are Not The Same',
+        });
+      }
+      else {
+        this.setState({
+          errormessage: 'NO ISSUES HERE',
         });
       }
     }
 
-    this.loginpage = () => {
-      console.log("loginpage");
+    this.setEmail = (e) => {
       this.setState({
-        loginstate: 1,
-        signupstate: 0,
+        email: e.target.value
       });
     }
 
-    this.signuppage = () => {
+    this.setForname = (e) => {
+      this.setState({
+        forname: e.target.value
+      });
+    }
+    this.setSurname = (e) => {
+      this.setState({
+        surname: e.target.value
+      });
+    }
+
+    this.setPassword = (e) => {
+      this.setState({
+        password: e.target.value
+      });
+    }
+
+    this.setConfimPassword = (e) => {
+      this.setState({
+        confimPassword: e.target.value
+      });
+    }
+
+    this.loginPage = () => {
+      console.log("loginpage");
+      this.setState({
+        loginState: 1,
+        signupState: 0,
+      });
+    }
+
+    this.signupPage = () => {
       console.log("signuppage");
       this.setState({
-        loginstate: 0,
-        signupstate: 1,
+        loginState: 0,
+        signupState: 1,
       });
     }
   }
@@ -57,24 +111,20 @@ class App extends Component {
         <header className="App-header">
           <div>
             <br />
-            <button className={'loginButton' + this.state.loginstate} onClick={this.loginpage}>
+            <button className={'loginButton' + this.state.loginState} onClick={this.loginPage}>
               Login
           </button>
-            <button className={'loginButton' + this.state.signupstate} onClick={this.signuppage}>
+            <button className={'loginButton' + this.state.signupState} onClick={this.signupPage}>
               SignUp
           </button>
           </div>
 
-          <div className={"login" + this.state.loginstate}>
+          <div className={"login" + this.state.loginState}>
             <br />
             Email
             <input />
             Password
             <input />
-            <br />
-            <div className="invalid">
-              {this.state.errormessage}
-            </div>
             <br />
             <button onClick={this.loginvalidate}>
               Login
@@ -82,19 +132,23 @@ class App extends Component {
             <br />
           </div>
 
-          <div className={"signup" + this.state.signupstate}>
+          <div className={"signup" + this.state.signupState}>
             Email
-            <input placeholder="example@example.qa.com" />
+            <input onChange={this.setEmail} placeholder="example@example.qa.com" />
             Forename
-            <input />
+            <input onChange={this.setForname} />
             Surname
-            <input />
+            <input onChange={this.setSurname} />
             Password
-            <input />
+            <input onChange={this.setPassword} type="password"/>
             Confirm Password
-            <input />
+            <input onChange={this.setConfimPassword} type="password" />
             <br />
-            <button>
+            <div className="invalid">
+              {this.state.errormessage}
+            </div>
+            <br />
+            <button onClick={this.signupvalidate}>
               SignUp
             </button>
             <br />

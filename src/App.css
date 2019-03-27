@@ -46,7 +46,6 @@
 .signup0
 {
   display: none;
-  align-items: center;
 }
 .signup1
 {
@@ -194,8 +193,6 @@ input{
   padding: 0px 0px;
   font-size: 30px;
 }
-
-
 
 .image{
   position: relative;
