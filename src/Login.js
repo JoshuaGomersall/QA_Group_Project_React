@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import validator from 'validator';
-import axios from "axios";
+
 
 class App extends Component {
 
@@ -14,13 +14,14 @@ class App extends Component {
       password: '',
       confimPassword: '',
 
-      loginState: 1,
-      signupState: 0,
+      loginState: 0,
+      signupState: 1,
 
       errorMessage: '',
     }
 
-    this.signupValidate = () => {
+    this.signupvalidate = () => {
+      console.log(this.state.email);
       if (this.state.email == ''){
         this.setState({
           errormessage: 'Missing Email',
@@ -53,23 +54,10 @@ class App extends Component {
       }
       else {
         this.setState({
-          errormessage: '',
+          errormessage: 'NO ISSUES HERE',
         });
-        axios.post(`52.142.151.160:8081/getters/createUser`, {
-          "email": this.state.email,
-          "forname": this.state.forname,
-          "surname": this.state.surname,
-          "password": this.state.password,
-        })
-       .then(response => {
-         console.log(response.data);
-         console.log("Done");
-         alert("Dude Added");
-         });
-       };
+      }
     }
-
-
 
     this.setEmail = (e) => {
       this.setState({
@@ -160,11 +148,12 @@ class App extends Component {
               {this.state.errormessage}
             </div>
             <br/>
-            <button onClick={this.signupValidate}>
+            <button onClick={this.signupvalidate}>
               SignUp
             </button>
             <br/>
           </div>
+
         </header>
       </div>
     );

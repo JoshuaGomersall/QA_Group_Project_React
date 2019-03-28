@@ -9,6 +9,7 @@ import Home from "./Home";
 import AccountSettings from "./AccountSettings";
 import FloorPlan from "./FloorPlan";
 
+
 class App extends Component {
 
   constructor(props) {
@@ -18,70 +19,63 @@ class App extends Component {
       surname: 'Richards',
       email: 'JohnRichards@qa.com',
     };
-    this.rmsClick = () => {
-    }
   }
 
   render() {
     return (
       <Router>
         <div className="App">
-          <div >
-            <div className="grid-container">
+        <div>
+          <div className="grid-container">
 
-              <div className="padding">
-              </div>
-              <br />
-              <div className="logo">
-                <img style={{ width: '80px', height: '80px' }} src={logo_qa} alt="Logo" onClick={this.rmsClick} />
-              </div>
+            <div className="padding">
+            </div>
+            <br />
+            <div className="logo">
+              <img style={{ width: '80px', height: '80px' }} src={logo_qa} alt="Logo" />
+            </div>
 
-              <div className="header">
-                <img style={{ width: '60px', height: '60px' }} src={qa} alt="Logo" />
-                <a href="https://consulting.qa.com">
-                  Consulting Rooms
-                </a>
-              </div>
+            <div className="header">
+              <div >
+              <img style={{ width: '50px', height: '50px'}} src={qa} alt="Logo" />
+              Consulting Rooms
+                  </div>
+            </div>
 
-              <div className="profile">
-                <button>
-                  <Link to={this.state.forename + this.state.surname + '_account_settings'}>{this.state.forename} {this.state.surname}
-                  </Link>
-                </button>
-                <button>
-                  <a href="/">Logout</a>
-                </button>
-              </div>
+            <div className="profile">
 
-              <div className="main">
-                <Route exact path="/Home" component={Home} />
-                <Route exact path="/CheckRooms" />
-                <Route exact path="/Floor4" component={FloorPlan} floornumber='4' />
-                <Route exact path="/Floor5" component={FloorPlan} floornumber='5' />
-                <Route exact path="/RoomBooking" component={RoomBooking} />
-                <Route exact path={"/" + this.state.forename + this.state.surname + '_account_settings'} forename={this.state.forename} surname={this.state.surname} email={this.state.email} component={AccountSettings} />
-              </div>
+              <button>
+                <Link to={this.state.forename + this.state.surname + '_account_settings'}>{this.state.forename} {this.state.surname}
+                </Link>
+              </button>
+              <button>
+                <NavLink to="/">Logout</NavLink>
+              </button>
+            </div>
 
-              <div className="menu">
-                <div className="topnav">
-                  <h3>
-                    <NavLink to="/Home">Home</NavLink>
-                  </h3>
-                  <br/>
-                  <h3>
-                    <NavLink to="/Floor4">Floor 4</NavLink>
-                  </h3>
-                  <br/>
-                  <h3>
-                    <NavLink to="/Floor5">Floor 5</NavLink>
-                  </h3>  
-                  <br/>
-                  <h3>
-                  <NavLink to="/RoomBooking">Room Booking</NavLink>
-                </h3>
-                </div>
+            <div className="main">
+              <Route exact path="/Home" component={Home} />
+              <Route exact path="/CheckRooms" />
+              <Route exact path="/Floor4" component={FloorPlan} floornumber='4' />
+              <Route exact path="/Floor5" />
+              <Route exact path="/RoomBooking" component={RoomBooking} />
+              <Route exact path={"/" + this.state.forename + this.state.surname + '_account_settings'} forename={this.state.forename} surname={this.state.surname} email={this.state.email} component={AccountSettings} />
+            </div>
+
+            <div className="menu">
+              <div className="topnav">
+                <NavLink to="/Home">Home</NavLink>
+                <br /><br />
+                <NavLink to="/CheckRooms">Check Rooms</NavLink>
+                <br /><br />
+                <NavLink to="/Floor4">Floor 4</NavLink>
+                <br /><br />
+                <NavLink to="/Floor5">Floor 5</NavLink>
+                <br /><br />
+                <NavLink to="/RoomBooking">Room Booking</NavLink>
               </div>
             </div>
+          </div>
           </div>
         </div>
       </Router>
