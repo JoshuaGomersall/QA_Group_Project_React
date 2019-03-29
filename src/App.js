@@ -22,9 +22,8 @@ class App extends Component {
   render() {
     return (
       <div>
-        <button onClick={this.changeToMain}>Login</button>
-
         <div className={"logindis" + this.state.loggedin}>
+		<button onClick={this.changeToMain}>Login</button>
         <Login/>
         </div>
         <div className={"navBardis" + this.state.loggedin}>
