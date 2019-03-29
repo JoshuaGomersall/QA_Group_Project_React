@@ -3,6 +3,28 @@
   align-items: center;
 }
 
+.logindis1 ,.navBardis0,.bookingForm0 ,.floorPlan1{ 
+  display: none;
+}
+
+.bookingForm1
+{
+  text-align: center;
+  align-items: center;
+}
+
+.login1{
+  text-align: center;
+  align-items: center;
+}
+
+.imagecontainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: top;
+}
+
 .loginButton0
 {
   background-color:  rgb(91, 155, 213);
@@ -77,8 +99,8 @@
 }
 
 .topnav {
-font-family: Adventure;
-  overflow: hidden;
+  overflow-x: hidden;
+  z-index: 1;
   margin: 0px;
   padding: 0px;
   background-color: rgb(61, 111, 201);
@@ -127,11 +149,12 @@ input{
 
 .inputlarge{
   text-align: center;
+  align-items: righ;
   background-color :#d1d1d1ff;
   color: black;
   border-bottom-width: 5px;
-  width: 50vh;
-  height: 50vh;
+  width: 30vh;
+  height: 20vh;
 }
 
 .logo { grid-area: logo;
@@ -139,16 +162,22 @@ input{
 }
 
 .header { grid-area: header;
-     background-color:rgb(61, 111, 201);
+  background-color:rgb(61, 111, 201);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: top;
 }
 
 .menu { grid-area: menu;
   background-color: rgb(61, 111, 201);
-  height: 90vh;
+  height: 100%;
+  width: 25vh;
 }
 
 .main { grid-area: main;
   background-color: white;
+  width: 180vh;
 }
 
 .profile { grid-area: logout;
@@ -160,14 +189,10 @@ input{
      height: 4vh;
 }
 
-.paddingwhite {
-  background-color:white;
-  color: black;
-}
-
 .paddingtest {
   background-color:rgb(61, 111, 201);
-  padding: 40px;
+  margin-left: 20vh;
+  margin-right: 20vh;
 }
 
 .footer { grid-area: footer;
@@ -180,8 +205,6 @@ input{
   grid-template-areas:
     'padding padding padding padding padding padding padding padding'
     'logo header header header header logout logout logout'
-    'menu main main main main main main main'
-    'menu main main main main main main main'
     'menu main main main main main main main';
 	
   grid-gap: 0px;
